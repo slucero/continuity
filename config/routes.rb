@@ -1,4 +1,7 @@
 Continuity::Application.routes.draw do
+  resources :events
+
+
   resources :timelines
 
 
