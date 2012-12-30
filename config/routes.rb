@@ -1,8 +1,9 @@
 Continuity::Application.routes.draw do
-  resources :events
 
+  root :to => 'timelines#index'
 
   resources :timelines
+  resources :events
 
 
   # The priority is based upon order of creation:
