@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @timeline.title %>
-</p>
-
-<p>
-  <b>Summary:</b>
+<h1 class="timeline-title"><%= @timeline.title %></h1>
+<p class="timeline-summary">
   <%= @timeline.summary %>
 </p>
 
-
+<h2>Events</h2>
+<ul class="event-list">
+  <% @events.each do |event| %>
+    <li class="event">
+      <%= link_to event.title event %>
+    </li>
+  <% end %>
+</ul>
 <%= link_to 'Edit', edit_timeline_path(@timeline) %> |
 <%= link_to 'Back', timelines_path %>

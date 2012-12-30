@@ -14,6 +14,7 @@ class TimelinesController < ApplicationController
   # GET /timelines/1.json
   def show
     @timeline = Timeline.find(params[:id])
+    @events = @timeline.events
 
     respond_to do |format|
       format.html # show.html.erb
