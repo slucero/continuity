@@ -11,26 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229231417) do
+ActiveRecord::Schema.define(:version => 20130101011233) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
     t.string   "image"
     t.text     "summary"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "sequences", :force => true do |t|
-    t.integer  "timeline_id"
-    t.integer  "event_id"
-    t.integer  "weight"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "timeline_id"
   end
 
-  add_index "sequences", ["event_id"], :name => "index_sequences_on_event_id"
-  add_index "sequences", ["timeline_id"], :name => "index_sequences_on_timeline_id"
+  add_index "events", ["timeline_id"], :name => "index_events_on_timeline_id"
 
   create_table "timelines", :force => true do |t|
     t.string   "title"
