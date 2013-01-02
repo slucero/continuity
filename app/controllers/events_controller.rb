@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  # GET /timeline/:timeline_id/events
-  # GET /timeline/:timeline_id/events.json
+  # GET /events
+  # GET /events.json
   def index
     @events = Event.all
 
@@ -10,8 +10,8 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET /timeline/:timeline_id/events/1
-  # GET /timeline/:timeline_id/events/1.json
+  # GET /events/1
+  # GET /events/1.json
   def show
     @event = Event.find(params[:id])
 
@@ -21,8 +21,8 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET /timeline/:timeline_id/events/new
-  # GET /timeline/:timeline_id/events/new.json
+  # GET /events/new
+  # GET /events/new.json
   def new
     @event = Event.new
 
@@ -32,13 +32,13 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET /timeline/:timeline_id/events/1/edit
+  # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
   end
 
-  # POST /timeline/:timeline_id/events
-  # POST /timeline/:timeline_id/events.json
+  # POST /events
+  # POST /events.json
   def create
     @event = Event.new(params[:event])
 
@@ -53,8 +53,8 @@ class EventsController < ApplicationController
     end
   end
 
-  # PUT /timeline/:timeline_id/events/1
-  # PUT /timeline/:timeline_id/events/1.json
+  # PUT /events/1
+  # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
 
@@ -69,8 +69,8 @@ class EventsController < ApplicationController
     end
   end
 
-  # DELETE /timeline/:timeline_id/events/1
-  # DELETE /timeline/:timeline_id/events/1.json
+  # DELETE /events/1
+  # DELETE /events/1.json
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
