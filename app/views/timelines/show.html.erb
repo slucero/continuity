@@ -9,7 +9,7 @@
 <ul class="event-list">
   <% @events.each do |event| %>
     <li class="event">
-      <%= link_to event.title, event %>
+    <%= render :partial => "events/teaser", :locals => { :event => event } %>
     </li>
   <% end %>
 </ul>
