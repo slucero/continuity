@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+require 'csv'
+
+t = Timeline.create({ :title => 'Avengers Disassemble', :summary => 'Things go terribly wrong.' });
+
+CSV.foreach('doc/disassemble.csv') do |row|
+  series, issue, weight = row
+  e = Event.new({
+    :title => "#{series} ##{issue}",
+  })
+  e.timeline = t
+
+  e.save
+end
