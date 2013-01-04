@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  timeline: 
+  event: 
+  weight: 1
+
+two:
+  timeline: 
+  event: 
+  weight: 1
