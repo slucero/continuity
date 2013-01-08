@@ -1,5 +1,8 @@
 Continuity::Application.routes.draw do
 
+  resources :series
+
+
   root :to => 'timelines#index'
 
   resources :timelines
